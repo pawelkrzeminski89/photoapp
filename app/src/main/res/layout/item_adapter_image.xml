@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="appImage" type="com.example.photoapp.model.AppImage"/>
+        <variable name="callback" type="com.example.photoapp.adapters.ImageAdapterSelectInterface"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+
+        android:layout_width="match_parent"
+        card_view:cardElevation="0dp"
+        card_view:cardBackgroundColor="@color/item_adapter_image_background_color"
+        android:onClick="@{()->callback.onImagAdapterClick(appImage)}"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/drawable_bottom_line"
+            android:layout_height="wrap_content">
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/item_adapter_images_heigth"
+               android:layout_margin="@dimen/photo_app_standard_margin"
+               android:id="@+id/item_adapter_app_view">
+
+                 <com.google.android.material.imageview.ShapeableImageView
+                     android:id="@+id/item_adapter_image_thunbnail"
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_margin="@dimen/photo_app_standard_margin"
+                     android:gravity="center"
+                     app:imageUrl="@{appImage.thunbnail}"
+                     android:scaleType="centerCrop"
+                     app:layout_constraintWidth="percent"
+                     app:layout_constraintWidth_percent=".45"
+                     app:layout_constraintLeft_toLeftOf="parent"
+                     app:layout_constraintRight_toLeftOf="@id/item_adapter_image_user_name"
+                     app:layout_constraintTop_toTopOf="parent"
+                     app:strokeWidth="1dp"
+                     android:adjustViewBounds="true"
+                     app:strokeColor="?attr/colorPrimary"
+                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+                     />
+
+               <TextView
+                   android:id="@+id/item_adapter_image_user_name"
+                   android:layout_width="0dp"
+                   android:layout_height="0dp"
+                   android:layout_margin="@dimen/photo_app_standard_margin"
+                   android:background="@drawable/texr_view_pretty_border"
+                   android:gravity="center"
+                   android:text="@{appImage.userName}"
+                   android:textAlignment="center"
+                   android:textColor="?android:textColorPrimary"
+                   app:layout_constraintBottom_toTopOf="@id/item_adapter_image_tags"
+                   app:layout_constraintLeft_toRightOf="@id/item_adapter_image_thunbnail"
+                   app:layout_constraintRight_toRightOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+
+                   app:layout_constraintWidth="percent"
+                   app:layout_constraintWidth_percent=".4" />
+
+               <TextView
+                   android:id="@+id/item_adapter_image_tags"
+                   android:layout_width="0dp"
+                   android:layout_height="0dp"
+                   android:layout_margin="@dimen/photo_app_standard_margin"
+                   android:background="@drawable/texr_view_pretty_border"
+                   android:gravity="center"
+                   android:text="@{appImage.tags}"
+                   android:textAlignment="center"
+                   android:textColor="?android:textColorPrimary"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintLeft_toRightOf="@id/item_adapter_image_thunbnail"
+                   app:layout_constraintRight_toRightOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/item_adapter_image_user_name"
+                   app:layout_constraintWidth="percent"
+                   app:layout_constraintWidth_percent=".4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

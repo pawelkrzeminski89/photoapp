@@ -1,0 +1,30 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+
+
+
+
+    <dimen name="fragment_search_photo_object_button_width">150dp</dimen>
+    <dimen name="fragment_search_photo_object_button_height">60dp</dimen>
+    <dimen name="fragment_search_photo_object_marginTop">10dp</dimen>
+
+    <dimen name="fragment_search_photo_object_width">200dp</dimen>
+    <dimen name="fragment_search_photo_object_height">60dp</dimen>
+
+
+    <dimen name="progress_bar_default_width">100dp</dimen>
+    <dimen name="progress_bar_default_height">100dp</dimen>
+
+    <dimen name="photo_app_standard_margin">6dp</dimen>
+    <dimen name="photo_app_standard_padding">6dp</dimen>
+
+    <dimen name="item_adapter_images_heigth">150dp</dimen>
+
+    <dimen name="fragment_image_detail_textview_detail_width">300dp</dimen>
+    <dimen name="fragment_image_detail_textview_detail_heigth">40dp</dimen>
+
+    <dimen name="fragment_image_detail_image_detail_width">300dp</dimen>
+    <dimen name="fragment_image_detail_image_detail_heigth">300dp</dimen>
+
+</resources>

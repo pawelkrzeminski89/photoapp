@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="pixabaySearchArgument" type="com.example.photoapp.model.PixabaySearchArguments"/>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_ukraine"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_search_object_photo_argument_input_layout"
+            android:layout_width="@dimen/fragment_search_photo_object_width"
+            android:layout_height="@dimen/fragment_search_photo_object_height"
+            android:layout_marginTop="@dimen/fragment_search_photo_object_marginTop"
+            android:hint="@string/search_object_hint"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+           >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_search_object_photo_argument"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={pixabaySearchArgument.searchArgument}"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="@dimen/fragment_search_photo_object_button_width"
+            android:layout_height="@dimen/fragment_search_photo_object_button_height"
+            android:id="@+id/fragment_search_object_photo_button"
+            android:text="@string/search"
+            android:layout_marginTop="@dimen/fragment_search_photo_object_marginTop"
+            app:layout_constraintTop_toBottomOf="@id/fragment_search_object_photo_argument_input_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/fragment_search_object_photo_recyclerview_result"
+            android:paddingTop="@dimen/fragment_search_photo_object_marginTop"
+            android:padding="6dp"
+            app:layout_constraintTop_toBottomOf="@id/fragment_search_object_photo_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/progress_bar_default_width"
+            android:layout_height="@dimen/progress_bar_default_height"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
